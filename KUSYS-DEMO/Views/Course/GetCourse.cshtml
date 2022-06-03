@@ -1,0 +1,20 @@
+﻿@using KUSYS_DEMO.Domain.Entities
+@model List<Course>
+@TempData["Message"]
+<table class="table">
+	<thead>
+        <tr>
+            <th scope="col">Course Number</th>
+            <th scope="col">Course Name</th>
+        </tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+        <tr>
+            <td>@item.CourseId</td>
+            <td>@item.CourseName</td>
+        </tr>
+		}
+	</tbody>
+</table>

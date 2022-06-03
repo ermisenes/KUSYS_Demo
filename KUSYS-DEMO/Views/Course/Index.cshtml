@@ -1,0 +1,30 @@
+﻿@using KUSYS_DEMO.Domain.Entities
+@model List<StudentCourse>
+
+<h1>Total Number of Records:@Model.Count</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Student Number</th>
+            <th scope="col">Student Name</th>
+            <th scope="col">Course Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.Student.StudentId</td>
+            <td>@item.Student.FirstName @item.Student.LastName</td>
+            <td>@item.Course.CourseName</td>
+        </tr>
+        }
+    </tbody>
+</table>
+<div class="row">
+    <div class="col-12 text-black-50"></div>
+    <div class="col-5">
+        <a asp-action="GetCourse" asp-controller="Course" class="btn btn-primary">Show Course</a>
+    </div>
+</div>
